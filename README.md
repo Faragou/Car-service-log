@@ -1,66 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Autószerviz napló rendszer
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Ez a projekt egy Laravel alapú backend és egy Vue.js alapú frontend alkalmazás, amely lehetővé teszi ügyfelek és autóik nyilvántartását, valamint szerviznaplóik megtekintését
 
-## About Laravel
+## 📌 Verzióinformációk
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### **Backend**
+- Laravel Framework: **12.3.0**
+- Composer: **2.8.6 (2025-02-25)**
+- Apache: **2.4.58**
+- MariaDB: **10.4.32**
+- PHP: **8.2.12 (VS16 X86 64bit thread safe) + PEAR**
+- phpMyAdmin: **5.2.1**
+- XAMPP: **8.2.12**
+- XAMPP Control Panel: **3.3.0**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### **Frontend**
+- Vue.js: **3.2.13**
+- Axios: **1.8.4**
+- Tailwind CSS: **3.4.17**
+- AG Grid: **33.2.1**
+- Vue Toastification: **2.0.0-rc.5**
+- Vue CLI: **5.0.0**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## ⚙️ **Telepítési lépések**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 1. XAMPP telepítése és konfigurálása
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. **Töltsd le és telepítsd a XAMPP-ot** [XAMPP letöltés](https://www.apachefriends.org/index.html)
+2. **Indítsd el a XAMPP Control Panelt** és aktiváld az **Apache** és **MySQL** szolgáltatásokat.
+3. **Nyisd meg a phpMyAdmin-t** böngészőben:  http://localhost/phpmyadmin
+4. **Hozz létre egy új adatbázist** (például `carservice`).
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+### 2. Backend telepítése (Laravel)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Klónozd a projektet**  
+```sh
+git clone https://github.com/felhasznalo/projekt-neve.git
+cd projekt-neve/backend
 
-### Premium Partners
+### **Backend telepítése (Laravel)**
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+#### **1.1 Klónozd a projektet**
+```sh
+git clone https://github.com/felhasznalo/projekt-neve.git
+cd projekt-neve/backend
+```
+Függőségek telepítése
+```sh
+composer install
+```
+Környezeti változók beállítása
+Másold az .env.example fájlt és nevezd át .env-re:
+```sh
+cp .env.example .env
+```
+Majd generálj egy új alkalmazáskulcsot:
+```sh
+php artisan key:generate
+```
+Adatbázis beállítása
+Nyisd meg az .env fájlt és állítsd be az adatbázis kapcsolatot:
+```sh
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=adatbazis_nev
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Contributing
+Ezután futtasd a migrációkat és az alapadatok feltöltését ilyen sorrendben:
+Migárciók:
+```sh
+php artisan migrate --path=database/migrations/2025_03_28_123102_create_sessions_table.php
+php artisan migrate --path=database/migrations/2025_03_28_104339_create_clients_table.php
+php artisan migrate --path=database/migrations/2025_03_28_104421_create_cars_table.php
+php artisan migrate --path=database/migrations/2025_03_28_104359_create_services_table.php
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Seedelés:
+```sh
+php artisan db:seed --class=JSONDataSeeder 
+```
+Szerver elindítása
+```sh
+php artisan serve
+```
+### **Backend telepítése (Vue.js)**
 
-## Code of Conduct
+Lépj be a frontend mappába:
+```sh
+cd ../my-project
+```
+Függőségek telepítése:
+```sh
+npm install
+```
+Környezeti változók beállítása
+Hozz létre egy .env fájlt a frontend gyökérkönyvtárában, és add hozzá:
+```sh
+VITE_API_BASE_URL=http://127.0.0.1:8000/api
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Fejlesztői szerver indítása
+```sh
+npm run serve
+```
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
