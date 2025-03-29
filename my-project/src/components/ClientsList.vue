@@ -24,9 +24,9 @@
         <table class="min-w-full table-auto border-collapse border border-gray-300">
             <thead>
             <tr>
-                <th class="px-4 py-2 border border-gray-300">ID</th>
-                <th class="px-4 py-2 border border-gray-300">Name</th>
-                <th class="px-4 py-2 border border-gray-300">Card Number</th>
+                <th class="px-4 py-2 border border-gray-300">Azonosító</th>
+                <th class="px-4 py-2 border border-gray-300">Név</th>
+                <th class="px-4 py-2 border border-gray-300">Okmányazonosító</th>
             </tr>
             </thead>
             <tbody>
@@ -47,13 +47,13 @@
                                 <table class="min-w-full table-auto border-collapse border border-gray-300">
                                     <thead>
                                     <tr>
-                                        <th class="px-4 py-2 border border-gray-300">Car ID</th>
-                                        <th class="px-4 py-2 border border-gray-300">Type</th>
-                                        <th class="px-4 py-2 border border-gray-300">Registration Date</th>
-                                        <th class="px-4 py-2 border border-gray-300">Own brand</th>
-                                        <th class="px-4 py-2 border border-gray-300">Accidents</th>
-                                        <th class="px-4 py-2 border border-gray-300">Log event name</th>
-                                        <th class="px-4 py-2 border border-gray-300">Log event date</th>
+                                        <th class="px-4 py-2 border border-gray-300">Autó azonosító</th>
+                                        <th class="px-4 py-2 border border-gray-300">Típus</th>
+                                        <th class="px-4 py-2 border border-gray-300">Regisztráció időpontja</th>
+                                        <th class="px-4 py-2 border border-gray-300">Sajátmárkás</th>
+                                        <th class="px-4 py-2 border border-gray-300">Balesetek</th>
+                                        <th class="px-4 py-2 border border-gray-300">Szervíz neve</th>
+                                        <th class="px-4 py-2 border border-gray-300">Szervíz dátuma</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -73,10 +73,10 @@
                                                         <table class="min-w-full table-auto border-collapse border border-gray-300">
                                                             <thead>
                                                             <tr>
-                                                                <th class="px-4 py-2 border border-gray-300">Lognumber</th>
-                                                                <th class="px-4 py-2 border border-gray-300">Event name</th>
-                                                                <th class="px-4 py-2 border border-gray-300">Event Date</th>
-                                                                <th class="px-4 py-2 border border-gray-300">Document ID</th>
+                                                                <th class="px-4 py-2 border border-gray-300">Szervíz alkalom</th>
+                                                                <th class="px-4 py-2 border border-gray-300">Esemény neve</th>
+                                                                <th class="px-4 py-2 border border-gray-300">Esemény időpontja</th>
+                                                                <th class="px-4 py-2 border border-gray-300">Munkalap azonosító</th>
                                                             </tr>
                                                             </thead>
                                                             <tbody>
@@ -95,7 +95,7 @@
                                         </td>
                                         <td class="px-4 py-2 border border-gray-300">{{ car.type }}</td>
                                         <td class="px-4 py-2 border border-gray-300">{{ car.registered }}</td>
-                                        <td class="px-4 py-2 border border-gray-300">{{ car.ownbrand ? 'Yes' : 'No' }}</td>
+                                        <td class="px-4 py-2 border border-gray-300">{{ car.ownbrand ? 'Igen' : 'Nem' }}</td>
                                         <td class="px-4 py-2 border border-gray-300">{{ car.accident }}</td>
                                         <td class="px-4 py-2 border border-gray-300">{{ LatestBiggestLognumberedEventName }}</td>
                                         <td class="px-4 py-2 border border-gray-300">{{ LatestBiggestLognumberedEventDate }}</td>
