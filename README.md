@@ -41,7 +41,7 @@ Ez a projekt egy Laravel alapú backend és egy Vue.js alapú frontend alkalmaz�
 ```sh
 git clone https://github.com/felhasznalo/projekt-neve.git
 cd projekt-neve/backend
-
+```
 ### **Backend telepítése (Laravel)**
 
 #### **1.1 Klónozd a projektet**
