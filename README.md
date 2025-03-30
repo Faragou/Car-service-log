@@ -90,7 +90,7 @@ Szerver elindítása
 ```sh
 php artisan serve
 ```
-### **Backend telepítése (Vue.js)**
+### **Frontend telepítése (Vue.js)**
 
 Lépj be a frontend mappába:
 ```sh
