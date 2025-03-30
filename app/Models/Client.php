@@ -23,7 +23,7 @@ class Client extends Model
 
     public function serviceRecords()
     {
-        return $this->hasMany(ServiceRecord::class); // vagy más kapcsolat típus, ha szükséges
+        return $this->hasMany(ServiceRecord::class);
     }
 
 }
