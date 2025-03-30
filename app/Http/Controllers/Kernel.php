@@ -14,7 +14,7 @@ class Kernel extends HttpKernel
     use Fruitcake\Cors\HandleCors;
 
     protected $middleware = [
-        // Add this line
+        
         \Fruitcake\Cors\HandleCors::class,
     ];
 
@@ -26,11 +26,11 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            // Más middleware-ek
+            
         ],
 
         'api' => [
-            // Más API middleware-ek
+           
         ],
     ];
 
@@ -40,6 +40,6 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        // Más útvonalhoz rendelt middleware-ek
+        
     ];
 }
