@@ -1,7 +1,5 @@
 <?php
 
-// app/Http/Controllers/ClientController.php
-
 namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Models\Service;
@@ -54,7 +52,7 @@ class ClientController extends Controller
 
             // Ha több mint egy találat van, hibát dobunk
             if ($clients->count() > 1) {
-                // Frontend-en ezt kezelhetjük a toast üzenettel
+                
                 return response()->json([
                     'clients' => $clients,
                     'message' => 'Túl sok találat, kérjük pontosítson!'
@@ -69,7 +67,7 @@ class ClientController extends Controller
             $client = $clients->first();
         }
 
-        // Kártyanév (okmányazonosító) keresése
+        
         if ($validated['document_id']) {
             $client = Client::where('card_name', $validated['document_id'])->first();
 
