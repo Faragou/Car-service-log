@@ -9,10 +9,10 @@ Route::prefix('v1')->group(function () {
     // Client Routes
     Route::get('/clients', [ClientController::class, 'index']);
     Route::get('/clients/{id}/cars', [ClientController::class, 'getCars']);
-
+    Route::get('searchClients', [ClientController::class, 'searchClient']);
     // Car Routes
     Route::get('/clients/{clientId}/cars/{carIndex}/servicelogs', [CarController::class, 'getServiceLogs']);
-    Route::get('searchClients', [ClientController::class, 'searchClient']);
+    
 
 
 });
