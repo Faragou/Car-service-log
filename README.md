@@ -34,10 +34,7 @@ Ez a projekt egy Laravel alapú backend és egy Vue.js alapú frontend alkalmaz�
 4. **Hozz létre egy új adatbázist** (például `carservice`).
 
 ---
-
-### 2. Backend telepítése (Laravel)
-
-1. **Klónozd a projektet**  
+ **Klónozd a projektet**  
 ```sh
 git clone https://github.com/felhasznalo/projekt-neve.git
 cd projekt-neve/backend
