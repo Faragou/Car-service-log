@@ -240,7 +240,7 @@ export default defineComponent({
                 return;
             }
 
-            // Ha minden rendben van, elküldjük a keresést
+            
             this.fetchClient();
         },
 
@@ -255,21 +255,21 @@ export default defineComponent({
                 });
 
 
-                // Ha több találat van
+                
                 if (response.data.message) {
                     this.errorMessage = 'Több ügyfél találatot találtunk. Kérjük, pontosítson!';
-                    toast.warning(this.errorMessage); // Figyelmeztetés toast
+                    toast.warning(this.errorMessage); 
                 } else if (response.data.length === 1) {
-                    toast.success('Sikeres keresés!'); // Sikeres keresés
+                    toast.success('Sikeres keresés!'); 
                     this.clientDetails = response.data[0];
                 } else {
                     this.errorMessage = 'Nincs találat.';
-                    toast.info(this.errorMessage); // Információs toast
+                    toast.info(this.errorMessage); 
                 }
             } catch (error) {
                 console.error(error);
                 this.errorMessage = 'Hiba történt a keresés során.';
-                toast.error(this.errorMessage); // Hibaüzenet toast
+                toast.error(this.errorMessage); 
             }
         },
 
@@ -289,19 +289,4 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* Custom scrollbar for better UX */
-.overflow-y-auto {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0,0,0,0.2) transparent;
-}
-
-.overflow-y-auto::-webkit-scrollbar {
-    width: 6px;
-}
-
-.overflow-y-auto::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,0.2);
-    border-radius: 3px;
-}
-
 </style>
